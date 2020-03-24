@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { changeField, initializeForm, login } from '../../modules/auth';
-import AuthForm from '../../components/auth/AuthForm';
-import { check } from '../../modules/user';
+import moment from 'moment';
+import Time from '../../components/main/Time';
 
 const MainContainer = () => {
-  return <AuthForm type="login" />;
+  const getCurrentTime = () => moment().format('HH:mm:ss');
+  const [currentTime, setCurrentTime] = useState(getCurrentTime());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentTime(getCurrentTime());
+    }, 1000);
+  });
+
+  return <Time currentTime={currentTime} />;
 };
 
 export default MainContainer;

@@ -1,13 +1,20 @@
 import React from 'react';
 import MainTemplate from '../../components/main/MainTemplate';
-import LoginForm from '../../containers/auth/LoginForm';
+import MainContainer from '../../containers/main/MainContainer';
+import WeatherContainer from '../../containers/main/WeatherContainer';
+import WeatherTemplate from '../../components/main/WeatherTemplate';
 
-const LoginPage = () => {
+const MainPage = () => {
   return (
-    <MainTemplate>
-      <LoginForm />
-    </MainTemplate>
+    <>
+      <WeatherTemplate>
+        <WeatherContainer />
+      </WeatherTemplate>
+      <MainTemplate>
+        <MainContainer />
+      </MainTemplate>
+    </>
   );
 };
 
-export default LoginPage;
+export default MainPage;
