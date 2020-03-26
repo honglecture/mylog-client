@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 /* 화면 전체를 채움 */
 const WeatherTemplateBlock = styled.div`
   position: fixed;
-  right: 0;
-  top: 0;
+  right: 2%;
+  top: 2%;
   display: flex;
   z-index: 1;
 `;

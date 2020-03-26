@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeather } from '../../modules/weather';
+import moment from 'moment';
 import Weahter from '../../components/main/Weahter';
 
 const WeatherContainer = () => {
+  const [currentHour, setCurrentHour] = useState(moment().format('HH'));
   const dispatch = useDispatch();
 
   const { weather, error, loading } = useSelector(({ weather, loading }) => ({
@@ -24,7 +26,14 @@ const WeatherContainer = () => {
     });
   }, [dispatch]);
 
-  return <Weahter data={weather} error={error} loading={loading} />;
+  return (
+    <Weahter
+      data={weather}
+      error={error}
+      loading={loading}
+      currentHour={currentHour}
+    />
+  );
 };
 
 export default WeatherContainer;
