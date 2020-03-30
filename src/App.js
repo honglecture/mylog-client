@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import LoginPage from './pages/auth/LoginPage';
 import MainPage from './pages/main/MainPage';
 import { Helmet } from 'react-helmet-async';
+import HomePage from './pages/mylog/HomePage';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       </Helmet>
       <Route component={MainPage} exact path="/" />
       <Route component={LoginPage} path="/login" />
+      <Route component={HomePage} path="/home" />
     </>
   );
 };
